@@ -21,9 +21,9 @@ template evaluation.
 The EJS tag syntax is as follows:
 
 * `<% ... %>` silently evaluates the statement inside the tags.
-* `<%= ... %>` evaluates the expression inside the tags and inserts
+* `<%- ... %>` evaluates the expression inside the tags and inserts
   its string value into the template output.
-* `<%- ... %>` behaves like `<%= ... %>` but HTML-escapes its output.
+* `<%= ... %>` behaves like `<%- ... %>` but HTML-escapes its output.
 
 If you have the [ExecJS](https://github.com/sstephenson/execjs/)
 library and a suitable JavaScript runtime installed, you can pass a
