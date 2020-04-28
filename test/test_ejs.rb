@@ -168,6 +168,12 @@ class EJSEvaluationTest < Test::Unit::TestCase
 
     template = "<%= foobar %>"
     assert_equal "&#x27;Foo Bar&#x27;", EJS.evaluate(template, { :foobar => "'Foo Bar'" })
+
+    template = "<%= true ? foo : bar %>"
+    assert_equal "Foo", EJS.evaluate(template, { foo: "Foo", bar: "Bar" })
+
+    template = "<%= false ? foo : bar %>"
+    assert_equal "Bar", EJS.evaluate(template, { foo: "Foo", bar: "Bar" })
   end
 
   test "braced escaping" do
